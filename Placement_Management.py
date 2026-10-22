@@ -1,5 +1,20 @@
+import json
 #Student Placement Management System
 students = []
+
+def save_data():
+    with open("students.json", "w") as file:
+        json.dump(students, file, indent=4)\
+
+def load_data():
+    global students
+    try:
+        with open("students.json", "r") as file:
+            students = json.load(file)
+    except FileNotFoundError:
+        students = []
+
+load_data()
 
 while True:
     print("\n===== PLACEMENT MANAGEMENT SYSTEM =====")
@@ -38,6 +53,7 @@ while True:
         }
 
         students.append(student)
+        save_data()
         print("Student added successfully!")
 
 #if choice 2
@@ -117,6 +133,7 @@ while True:
         for student in students:
             if student["usn"].lower() == delete_usn.lower():
                 students.remove(student)
+                save_data()
                 print("Student deleted successfully!")
                 found = True
                 break

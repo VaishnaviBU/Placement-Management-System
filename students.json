@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Vaishnavi",
+        "usn": "001",
+        "branch": "ECE",
+        "cgpa": 8.0,
+        "backlogs": 0
+    },
+    {
+        "name": "Pranav",
+        "usn": "002",
+        "branch": "CSE",
+        "cgpa": 9.0,
+        "backlogs": 0
+    }
+]
